@@ -1,14 +1,14 @@
 //First Letters should be first.
-let str = String(prompt("Enter a text"));
+let str = "i like programming.";
 let result = "";
 let capsNext = true;
 for (let i = 0; i < str.length; i++) {
-    let char = str.charAt(i);
-    if (capsNext) {
-        result += char >= 'a' && char <= 'z' ? String.fromCharCode(char.charCodeAt(0) - 32) : char;
+    let currentChar = str.charAt(i);
+    if (currentChar >= 'a' && currentChar <= 'z' && capsNext) {
+        result += String.fromCharCode(currentChar.charCodeAt(0) - 32);
     } else {
-        result += char;
+        result += currentChar;
     }
-    capsNext = (char === '' || char === '.' || char === ',' || char === '!' || char === '?');
+    capsNext = (currentChar === ' ' || currentChar === '.' || currentChar === ',' || currentChar === '!' || currentChar === '?');
 }
 console.log(result);
